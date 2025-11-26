@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звіт Лабораторної роботи – Voloshyna Tetiana</title>
+    <link rel="stylesheet" href="styles — копия.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ<br>З ДИСЦИПЛІНИ "Проєктування WEB-ЗАСТОСУВАНЬ"</h1>
+        <h2>Виконавець: Студентка групи ІП-зп51 — Волошина Тетяна Василівна</h2>
+        <!-- Верхнє меню лабораторних -->
+        <nav class="main-nav">
+                <a href="#lab1" class="nav-btn"><br>Лабораторна</br><br>робота №1</br></a>
+                <a href="#lab2" class="nav-btn"><br>Лабораторна</br><br>робота №2</br></a>
+                <a href="#lab3" class="nav-btn"><br>Лабораторна</br><br>робота №3</br></a>
+                <a href="#lab4" class="nav-btn"><br>Лабораторна</br><br>робота №4</br></a>
+                <a href="#lab5" class="nav-btn"><br>Лабораторна</br><br>робота №5</br></a>
+                <a href="#lab6" class="nav-btn"><br>Лабораторна</br><br>робота №6</br></a>
+                <a href="#lab7" class="nav-btn"><br>Лабораторна</br><br>робота №7</br></a>
+                <a href="#lab8" class="nav-btn"><br>Лабораторна</br><br>робота №8</br></a>
+                <a href="#lab9" class="nav-btn"><br>Лабораторна</br><br>робота №9</br></a>
+        </nav>
+    </header>
+
+    <div class="layout">
+        <!-- Ліве меню -->
+        <aside class="sidebar">
+            <nav class="side-nav" id="lab1-menu">
+                <a href="#tema">Тема / Мета / Місце</a>
+                <a href="#opis">Опис середовища</a>
+                <a href="#struktura">Структура документа</a>
+                <div class="submenu" id="submenu-struktura">
+                    <a href="#tabl">HTML таблиця</a>
+                    <a href="#img">HTML зображення</a>
+                    <a href="#form">HTML форма</a>
+                    <a href="#list">HTML список</a>
+                </div>
+                <a href="#mainpage">Головна сторінка</a>
+                <a href="#codemainpage">Код головної сторінки</a>
+            </nav>
+        </aside>
+
+        <!-- Центральна частина -->
+        <main class="content">
+            <section id="tema" class="panel">
+                <h2>Тема, мета, місце розташування</h2>
+                <p><b>Тема:</b> DollArt — інтернет-магазин авторських ляльок ручної роботи.</p>
+                <p><b>Мета:</b> Створити макет та головну сторінку веб-застосунку з HTML, таблицями, формами, списками та зображеннями.</p>
+                <p><b>Місце розташування:</b>
+                    <ul>
+                    <li>Репозиторій WEB-застосунку: <em><a href="https://github.com/TetianaVV/IP-zp51_appWEB-VoloshynaTetiana-FIOT_2025" target="_blank">Репозиторій WEB-застосунку</a></em></li>
+                    <li>Жива сторінка WEB-застосунку: <em><a href="//tetianavv.github.io/IP-zp51_appWEB-VoloshynaTetiana-FIOT_2025/">Жива сторінка WEB-застосунку</a></em></li>
+                    <li>Репозиторій звіту: <em><a href="//github.com/TetianaVV/IP-zp51appRECORD-VoloshynaTetiana-FIOT-2025">Репозиторій звіту</a></em></li>
+                    <li>Жива сторінка звіту: <em><a href="//tetianavv.github.io/IP-zp51appRECORD-VoloshynaTetiana-FIOT-2025/">Жива сторінка звіту</a></em></li>
+                </ul>
+                </p>
+            </section>
+
+            <section id="opis" class="panel">
+                <h2>Опис предметного середовища</h2>
+                <p>DollArt — це веб-платформа для демонстрації та продажу текстильних ляльок ручної роботи.
+                    Користувач переглядає каталог, обирає ляльку, додає її в кошик та оформлює замовлення.
+                    Майстриня отримує контактні дані і виготовляє/надсилає замовлення.
+                    Адміністратор (майстриня) може додавати нові ляльки, редагувати опис, змінювати статус товарів.</p>
+                    <h2>Функціональні та нефункціональні вимоги</h2>
+
+                    <h3>Функціональні вимоги</h3>
+                    <ul>
+                        <li>Перегляд каталогу ляльок</li>
+                        <li>Перегляд детальної сторінки</li>
+                        <li>Додавання в кошик</li>
+                        <li>Оформлення замовлення через форму</li>
+                        <li>Замовлення індивідуальних ляльок</li>
+                        <li>Адміністрування каталогу</li>
+                    </ul>
+                
+                    <h3>Нефункціональні вимоги</h3>
+                    <ul>
+                        <li>Адаптивність</li>
+                        <li>Швидке завантаження</li>
+                        <li>Оптимізація зображень</li>
+                        <li>Інтуїтивний дизайн</li>
+                    </ul>
+            </section>
+
+            <section id="struktura" class="panel">
+                <h2>Структура документа</h2>
+                <p>Оберіть підпункт зліва для перегляду HTML-коду таблиць, зображень, форм та списків.</p>
+            </section>
+            <!-- Підпункти меню -->
+             <!-- Підпункт по таблицях-->
+            <section id="tabl" class="panel">
+                <h2>HTML-код таблиці</h2>
+                <pre>
+                    &lt;table&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Параметр&lt;/th&gt;
+                        &lt;th&gt;Значення&lt;/th&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Висота&lt;/td&gt;
+                        &lt;td&gt;28 см&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Тип&lt;/td&gt;
+                        &lt;td&gt;Текстильна лялька&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Наявність&lt;/td&gt;
+                        &lt;td&gt;Під замовлення&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+                </pre>
+                <h2>Cкріншот таблиці.</h2>
+                <img src="images/tabl.jpg" alt="Cкріншот таблиці">
+                <h2>Теорія.</h2>
+                <p>
+                    Тег &lt;table&gt; визначає HTML таблицю.
+
+                    Кожен рядок таблиці визначається тегом &lt;tr&gt;. Кожен заголовок таблиці визначається тегом &lt;th&gt;. Кожна чарунка з даними таблиці визначається тегом &lt;td&gt;.
+                        
+                    За замовчуванням текст в елементах &lt;th&gt; виділений жирним шрифтом і відцентрований.
+                        
+                    За замовчуванням текст в елементах &lt;td&gt; є звичайним і вирівняним за лівим краєм.
+                </p>
+            </section>
+            <!--Підпункт по зображеннях-->
+             <section id="img" class="panel">
+                <h2>HTML-код зображення</h2>
+                <pre>
+                    &lt;img src="images/лялька2.jpg" alt="Лялька ручної роботи в помаранчевому платті"&gt;
+                    &lt;img src="images/лялька1.jpg" alt="Лялька ручної роботи в блакитному платті"&gt;
+                    &lt;img src="images/заєць1.jpg" alt="Заєць ручної роботи в блакитному костюмі"&gt;
+                    &lt;img src="images/заєць2.jpg" alt="Заєць ручної роботи в лавандовому костюмі"&gt;
+                </pre>
+                <h2>Cкріншот зображення.</h2>
+                <img src="images/img.jpg" alt="Cкріншот зображення">
+                <h2>Теорія.</h2>
+                <p>
+                    В HTML зображення визначаються за допомогою тега &lt;img&gt;.
+
+                    Тег &lt;img&gt; пустий, містить лише атрибути і не має закриваючого тега.
+                    
+                    Атрибут src вказує URL (вебадресу) зображення.
+                    Атрибут alt надає альтернативний текст для зображення, якщо користувач з якоїсь причини не може його переглянути: через повільне підключення до Інтернету, помилки в атрибуті src або якщо користувач використовує програму читання з екрана (скрінрідер).
+
+                    Значення атрибута alt має описувати зображення, тобто те, що на ньому зображено.
+                    Можна використовувати атрибути width та height. Атрибути width та height завжди визначають ширину і висоту зображення в пікселях.
+                </p>
+            </section>
+            <!--Підпункт по формах-->
+            <section id="form" class="panel">
+                <h2>HTML-код форми</h2>
+                <pre>
+                     
+                     &lt;form&gt;
+                     &lt;label>Ваше ім'я:&lt;br&gt;
+                     &lt;input type="text" required&gt;
+                     &lt;/label&gt;&lt;br&gt;&lt;br&gt;
+                
+                     &lt;label>Телефон:&lt;br&gt;
+                     &lt;input type="tel" required&gt;
+                     &lt;/label&gt;&lt;br&gt;&lt;br&gt;
+                
+                     &lt;label&gt;Спосіб доставки:&lt;br&gt;
+                     &lt;select&gt;
+                     &lt;option&gt;Нова Пошта&lt;/option&gt;
+                     &lt;option>УкрПошта&lt;/option&gt;
+                     &lt;option>Кур’єр&lt;/option&gt;
+                     &lt;/select&gt;
+                     &lt;/label&gt;&lt;br&gt;&lt;br&gt;
+                
+                     &lt;button type="submit"&gt;Замовити&lt;/button&gt;
+                     &lt;/form&gt;
+                     
+                </pre>
+                <h2>Cкріншот форми.</h2>
+                <img src="images/form.jpg" alt="Cкріншот форми">
+                <h2>Теорія.</h2>
+                <p>
+                    HTML елемент &lt;form&gt; визначає форму, яка використовується для збору користувацького вводу.
+                    Елемент &lt;input&gt; є найбільш важливим елементом форми.
+
+                    Елемент &lt;input&gt; може відображатися кількома способами, в залежності від атрибута type.
+                    &lt;input type="text"&gt;	Визначає однорядкове поле вводу текста.
+                    &lt;input type="radio"&gt; Визначає перемикач (для выбору одного з кількох варіантів).
+                    &lt;input type="submit"&gt; Визначає кнопку відправки (для відправки форми).
+                    Атрибут action визначає дію, яку буде виконано при надсиланні форми.
+
+                    Зазвичай дані форми відправляються на вебсторінку на сервері, коли користувач натискає кнопку надсилання (submit).
+                    Атрибут target вказує, чи буде надісланий результат відкриватися в новій вкладці браузера, у фреймі або в поточному вікні.
+                    За замовчуванням значення '_self' означає, що форма буде відправлена в поточному вікні.                  
+                    Щоб зробити результат форми відкритим в новій вкладці браузера, використовуйте значення '_blank'.
+                    Іншими допустимими значеннями є '_parent', '_top' або name, яке представляє ім’я iframe.
+                    Атрибут method вказує метод HTTP (GET або POST), який буде використовуватись при надсиланні даних форми
+                    Кожне поле вводу повинно мати атрибут name для надсилання.
+                    Якщо атрибут name опущений, дані його поля вводу не будуть відправлені взагалі.
+                    Елемент &lt;fieldset&gt; використовується для групування пов’язаних даних у формі.
+                    Елемент &lt;legend&gt; визначає заголовок для елемента &lt;fieldset&gt;.
+                </p>
+            </section>
+            <!--Підпункт по списках-->
+            <section id="list" class="panel">
+                <h2>HTML-код списку</h2>
+                <pre>
+                     &lt;ol&gt;
+                     &lt;i&gt;Чистити сухою щіткою.&lt;/li&gt;
+                     &lt;li&gt;Не прати в машинці.&lt;/li&gt;
+                     &lt;li&gt;Не залишати під прямим сонцем.&lt;/li&gt;
+                     &lt;/ol&gt;
+                </pre>
+                <h2>Cкріншот списку.</h2>
+                <img src="images/list.jpg" alt="Cкріншот списку">
+                <h2>Теорія.</h2>
+                <p>
+                    Невпорядкований (ненумерований) список починається з тега &lt;ul&gt;. Кожний елемент списку починається з тега &lt;li&gt;.
+                    CSS властивість list-style-type використовується для визначення стиля маркера елемента списку:
+                    disc: Встановлює маркер елемента списка як маленьке чорне коло (за замовчуванням);
+                    circle: Встановлює маркер елемента списка у вигляді маленького пустого кола;
+                    square: Встановлює маркер елемента списка у вигляді квадрата;
+                    none: Елементи списка не будуть відмічені (маркери відсутні).
+
+                    Впорядкований (нумерований) список починається з тега &lt;ol&gt;. Кожний елемент списку починається з тега &lt;li&gt;.
+                    Атрибут type тега &lt;ol&gt; визначає тип маркера елемента списка:
+                    type="1": Елементи списка будуть пронумеровані цифрами (за замовчуванням);
+                    type="A": Елементи списка будуть пронумеровані заглавними літерами;
+                    type="a": Елементи списка будуть пронумеровані рядковими літерами;
+                    type="I": Елементи списка будуть пронумеровані великими римськими цифрами;
+                    type="i": Елементи списка будуть пронумеровані маленькими римськими цифрами.
+                    </p>
+            </section>
+            
+            <!--Пункт меню-->
+            <section id="mainpage" class="panel">
+                <h2>Головна сторінка WEB-застосунку</h2>
+                <p><a href="//C:/Users/Tania/Desktop/%D0%9A%D0%9F%D0%86/%D0%B2%D0%B5%D0%B1/IP-zp51_appWEB-VoloshynaTetiana-FIOT-2025/index.html" target="_blank">Перейти на головну сторінку</a></p>
+            </section>
+            
+            <!--Пункт меню-->
+            <section id="codemainpage" class="panel">
+                <h2>Код головної сторінки WEB-застосунку</h2>
+                <pre>
+                                &lt;!DOCTYPE html&gt;
+                                &lt;html lang="uk"&gt;
+                                &lt;head&gt;
+                                    &lt;meta charset="UTF-8"&gt;
+                                    &lt;title&gt;DollArt — Авторські текстильні ляльки&lt;/title&gt;
+                                    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&gt;
+                                    &lt;style&gt;
+                                body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 900px; margin: auto; }
+                                header, footer { color:blueviolet; background: #f2e8f4; padding: 15px; margin-bottom: 20px; border-radius: 10px; }
+                                nav a { margin-right: 15px; font-family: Arial, sans-serif; color:blueviolet;}
+                                img { width: 200px; border-radius: 10px; }
+                                table, th, td { border: 1px solid #888; border-collapse: collapse; padding: 8px; }
+                                form { margin-top: 20px; padding: 15px; border: 1px solid #aaa; border-radius: 10px; }
+                                h1, h2, h3 {color:blueviolet;}
+                            &lt;/style&gt;
+                        &lt;/head&gt;
+
+                        &lt;body&gt;
+
+                        &lt;header&gt;
+                            &lt;h1&gt;DollArt — інтернет-магазин авторських ляльок&lt;/h1&gt;
+                            &lt;nav&gt;
+                                &lt;a href="index.html"&gt;Головна&lt;/a&gt;
+                                &lt;a href="about.html" target="_blank"&gt;Про проєкт&lt;/a&gt;
+                            &lt;/nav&gt;
+                        &lt;/header&gt;
+
+                        &lt;section&gt;
+                            &lt;h2&gt;Новинки колекції&lt;/h2&gt;
+                            &lt;img src="images/лялька2.jpg" alt="Лялька ручної роботи в помаранчевому платті"&gt;
+                            &lt;img src="images/лялька1.jpg" alt="Лялька ручної роботи в блакитному платті"&gt;
+                            &lt;img src="images/заєць1.jpg" alt="Заєць ручної роботи в блакитному костюмі"&gt;
+                            &lt;img src="images/заєць2.jpg" alt="Заєць ручної роботи в лавандовому костюмі"&gt;
+
+                            &lt;h3&gt;Матеріали ляльки&lt;/h3&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;Трикотаж&lt;/li&gt;
+                                &lt;li&gt;Бавовна&lt;/li&gt;
+                                &lt;li&gt;Фліс&lt;/li&gt;
+                                &lt;li&gt;Акрилові нитки&lt;/li&gt;
+                                &lt;li&gt;Натуральне волосся (шерсть)&lt;/li&gt;
+                                &lt;li&gt;Взуття&lt;/li&gt;
+                                &lt;li&gt;Аксесуари&lt;/li&gt;
+                            &lt;/ul&gt;
+
+                            &lt;h3&gt;Догляд за лялькою&lt;/h3&gt;
+                            &lt;ol&gt;
+                                &lt;li&gt;Чистити сухою щіткою.&lt;/li&gt;
+                                &lt;li&gt;Не прати в машинці.&lt;/li&gt;
+                                &lt;li&gt;Не залишати під прямим сонцем.&lt;/li&gt;
+                            &lt;/ol&gt;
+                        &lt;/section&gt;
+
+                        &lt;section&gt;
+                            &lt;h2&gt;Характеристики ляльки&lt;/h2&gt;
+                            &lt;table&gt;
+                                &lt;tr&gt;
+                                    &lt;th&gt;Параметр&lt;/th&gt;
+                                    &lt;th&gt;Значення&lt;/th&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td&gt;Висота&lt;/td&gt;
+                                    &lt;td&gt;28 см&lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td&gt;Тип&lt;/td&gt;
+                                    &lt;td&gt;Текстильна лялька&lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td&gt;Наявність&lt;/td&gt;
+                                    &lt;td&gt;Під замовлення&lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/section&gt;
+
+                        &lt;section&gt;
+                            &lt;h2&gt;Оформлення замовлення&lt;/h2&gt;
+
+                            &lt;form&gt;
+                                &lt;label&gt;Ваше ім'я:&lt;br&gt;
+                                    &lt;input type="text" required&gt;
+                                &lt;/label&gt;&lt;br&gt;&lt;br&gt;
+
+                                &lt;label&gt;Телефон:&lt;br&gt;
+                                    &lt;input type="tel" required&gt;
+                                &lt;/label&gt;&lt;br&gt;&lt;br&gt;
+
+                                &lt;label&gt;Спосіб доставки:&lt;br&gt;
+                                    &lt;select&gt;
+                                        &lt;option&gt;Нова Пошта&lt;/option&gt;
+                                        &lt;option&gt;УкрПошта&lt;/option&gt;
+                                        &lt;option&gt;Кур’єр&lt;/option&gt;
+                                    &lt;/select&gt;
+                                &lt;/label&gt;&lt;br&gt;&lt;br&gt;
+
+                                &lt;button type="submit"&gt;Замовити&lt;/button&gt;
+                            &lt;/form&gt;
+                        &lt;/section&gt;
+
+                        &lt;footer&gt;
+                            &lt;p&gt;Ми в соцмережах:&lt;/p&gt;
+                            &lt;a href="https://www.instagram.com/dolls_voloshka?igsh=MW90Y3IybzhjeG41eA==" target="_blank"&gt;
+                                &lt;i class="fa-brands fa-instagram"&gt;&lt;/i&gt;
+                            &lt;/a&gt;
+
+                            &lt;a href="https://facebook.com/your_page" target="_blank"&gt;
+                                &lt;i class="fa-brands fa-facebook-f"&gt;&lt;/i&gt;
+                            &lt;/a&gt;
+
+                            &lt;a href="https://youtube.com/your_page" target="_blank"&gt;
+                                &lt;i class="fa-brands fa-youtube"&gt;&lt;/i&gt;
+                            &lt;/a&gt;
+                            
+                            &lt;p&gt;© 2025 DollArt. Всі права захищені.&lt;/p&gt;
+                        &lt;/footer&gt;
+
+                        &lt;/body&gt;
+                        &lt;/html&gt;
+                </pre>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>© 2025 Волошина Тетяна. Всі права захищені.</p>
+    </footer>
+
+    <script>
+        // Показати підменю для "Структура документа"
+        const strukturaLink = document.querySelector('a[href="#struktura"]');
+        const submenu = document.getElementById('submenu-struktura');
+
+        strukturaLink.addEventListener('click', () => {
+            submenu.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
