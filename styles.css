@@ -131,3 +131,28 @@ footer {
     padding: 15px;
     margin-top: 20px;
 }
+
+/* Додаткові стилі для ЛР №2 */
+.id-selector { color: #d63384; font-weight: bold; } /* Приклад для ідентифікатора */
+.class-selector { border-bottom: 2px solid blueviolet; } /* Приклад для класу */
+
+/* Стилізація текстових елементів */
+.highlight-text {
+    background-color: #fdf2ff;
+    padding: 2px 5px;
+    border-left: 4px solid blueviolet;
+}
+
+/* Приховування меню за замовчуванням (крім активного) */
+.side-nav { display: none; }
+.side-nav.active { display: block; }
+
+/* Адаптація блоків з кодом */
+pre {
+    background: #2d2d2d;
+    color: #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+}

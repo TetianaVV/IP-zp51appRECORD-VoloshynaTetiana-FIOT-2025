@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Звіт Лабораторної роботи – Voloshyna Tetiana</title>
-    <link rel="stylesheet" href="styles — копия.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
@@ -40,6 +40,19 @@
                 </div>
                 <a href="#mainpage">Головна сторінка</a>
                 <a href="#codemainpage">Код головної сторінки</a>
+            </nav>
+            <nav class="side-nav" id="lab2-menu">
+                <a href="#tema2">Тема / Мета</a>
+                <a href="#css-methods">Способи підключення CSS</a>
+                <a href="#selectors">Селектори</a>
+                <div class="submenu" style="display:block; margin-left: 10px;">
+                    <a href="#sel-tag">Селектор тегу</a>
+                    <a href="#sel-class">Селектор класу</a>
+                    <a href="#sel-id">Селектор ідентифікатора</a>
+                </div>
+                <a href="#cascade-inherit">Каскадування та Спадкування</a>
+                <a href="#text-format">Оформлення тексту</a>
+                <a href="#conclusions2">Висновки ЛР №2</a>
             </nav>
         </aside>
 
@@ -363,6 +376,57 @@
                         &lt;/html&gt;
                 </pre>
             </section>
+
+            <section id="tema2" class="panel">
+                <h2>Лабораторна робота №2: Тема та Мета</h2>
+                <p><b>Тема:</b> Каскадні таблиці стилів. Селектори. Ідентифікатори. Стилі оформлення тексту.</p>
+                <p><b>Мета:</b> Вивчити методи підключення CSS до HTML-документа, опанувати роботу з селекторами та навчитися стилізувати текстові елементи.</p>
+            </section>
+            
+            <section id="css-methods" class="panel">
+                <h2>Способи підключення стилів</h2>
+                <ul>
+                    <li><b>Зовнішній (External):</b> Через тег <code>&lt;link rel="stylesheet" href="style.css"&gt;</code> у head.</li>
+                    <li><b>Внутрішній (Internal):</b> Всередині тега <code>&lt;style&gt;</code> у head.</li>
+                    <li><b>Вбудований (Inline):</b> Через атрибут <code>style="..."</code> безпосередньо в тегу.</li>
+                </ul>
+            </section>
+            
+            <section id="sel-tag" class="panel">
+                <h2>Селектор тегу</h2>
+                <p>Використовується для застосування стилів до всіх елементів певного типу.</p>
+                <pre>p { color: grey; }</pre>
+            </section>
+            
+            <section id="sel-class" class="panel">
+                <h2>Селектор класу</h2>
+                <p>Дозволяє стилізувати групу елементів. В HTML пишеться <code>class="name"</code>, в CSS через крапку.</p>
+                <pre>.highlight { background: yellow; }</pre>
+            </section>
+            
+            <section id="sel-id" class="panel">
+                <h2>Селектор ідентифікатора</h2>
+                <p>Використовується для унікального елемента на сторінці. В CSS через решітку.</p>
+                <pre>#main-header { font-size: 24px; }</pre>
+            </section>
+            
+            <section id="cascade-inherit" class="panel">
+                <h2>Каскадування та Спадкування</h2>
+                <p><b>Каскадування</b> — це механізм вирішення конфліктів, коли до одного елемента застосовуються різні правила (пріоритет: inline > id > class > tag).</p>
+                <p><b>Спадкування</b> — це передача властивостей (наприклад, <code>font-family</code>) від батьківського елемента до дочірніх.</p>
+            </section>
+            
+            <section id="text-format" class="panel">
+                <h2>Приклади оформлення текстових елементів</h2>
+                <p class="highlight-text">Цей текст має відступ зліва та змінений фон через клас.</p>
+                <p style="text-transform: uppercase; letter-spacing: 2px;">Текст у верхньому регістрі з розрідженням.</p>
+            </section>
+            <section  id="conclusions2" class="panel">
+                <h2>Висновки ЛР №2</h2>
+                <p>
+                    У ході виконання ЛР №2 навчилася працювати з каскадними таблицями стилів. Опанувала розділення структури (HTML) та оформлення (CSS), навчилася використовувати різні типи селекторів (теги, класи, ID) та створювати адаптивну і привабливу верстку для інтернет-магазину.
+                </p>
+            </section>
         </main>
     </div>
 
@@ -371,12 +435,32 @@
     </footer>
 
     <script>
-        // Показати підменю для "Структура документа"
+       /* // Показати підменю для "Структура документа"
         const strukturaLink = document.querySelector('a[href="#struktura"]');
         const submenu = document.getElementById('submenu-struktura');
 
         strukturaLink.addEventListener('click', () => {
             submenu.style.display = 'block';
+        });*/
+
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        // Ховаємо всі меню
+        document.querySelectorAll('.side-nav').forEach(nav => nav.classList.remove('active'));
+        
+        // Отримуємо ID цільового меню (наприклад, #lab2)
+        const targetId = btn.getAttribute('href').replace('#', '');
+        const targetMenu = document.getElementById(targetId + '-menu');
+        
+        if (targetMenu) {
+            targetMenu.classList.add('active');
+        }
+         });
+        });
+
+        // Логіка для підменю "Структура"
+        document.querySelector('a[href="#struktura"]').addEventListener('click', () => {
+        document.getElementById('submenu-struktura').style.display = 'block';
         });
     </script>
 </body>
