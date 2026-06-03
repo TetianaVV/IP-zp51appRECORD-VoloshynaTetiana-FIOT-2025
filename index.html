@@ -54,6 +54,45 @@
                 <a href="#text-format">Оформлення тексту</a>
                 <a href="#conclusions2">Висновки ЛР №2</a>
             </nav>
+            <nav id="lab4-menu" class="side-nav">
+                <h2>Лабораторна №4</h2>
+                <a href="#descr4">Постановка задачі</a>
+                <div class="submenu">
+                    <a href="#task4-code">Код програми</a>
+                    <a href="#task4-result">Результат роботи</a>
+                </div>
+                <a href="#conclusions4">Висновки</a>
+            </nav>
+
+            <nav id="lab5-menu" class="side-nav">
+                <h2>Лабораторна №5</h2>
+                <a href="#descr5">Постановка задачі</a>
+                <div class="submenu">
+                    <a href="#task5-code">Код програми</a>
+                    <a href="#task5-result">Результат роботи</a>
+                </div>
+                <a href="#conclusions5">Висновки</a>
+            </nav>
+
+            <nav id="lab6-menu" class="side-nav">
+                <h2>Лабораторна №6</h2>
+                <a href="#descr6">Постановка задачі</a>
+                <div class="submenu">
+                    <a href="#task6-code">Код програми</a>
+                    <a href="#task6-result">Результат роботи</a>
+                </div>
+                <a href="#conclusions6">Висновки</a>
+            </nav>
+
+            <nav id="lab7-menu" class="side-nav">
+                <h2>Лабораторна №7</h2>
+                <a href="#descr7">Постановка задачі</a>
+                <div class="submenu">
+                    <a href="#task7-code">Код програми</a>
+                    <a href="#task7-result">Результат роботи</a>
+                </div>
+                <a href="#conclusions7">Висновки</a>
+            </nav>
         </aside>
 
         <!-- Центральна частина -->
@@ -427,6 +466,1585 @@
                     У ході виконання ЛР №2 навчилася працювати з каскадними таблицями стилів. Опанувала розділення структури (HTML) та оформлення (CSS), навчилася використовувати різні типи селекторів (теги, класи, ID) та створювати адаптивну і привабливу верстку для інтернет-магазину.
                 </p>
             </section>
+
+            <!--Лабораторна робота 4-->
+
+            <section id="descr4" class="panel">
+                <h2>Лабораторна робота №4. Функціональне застосування об'єктів у JS.</h2>
+                <p><b>Тема:</b> Об'єкти, масиви об'єктів, деструктуризація та методи перебору масивів у JavaScript.</p>
+                <p><b>Мета:</b> Набути практичних навичок роботи з об'єктами, використання стрілочних функцій та методів перебору масивів (map, filter, reduce).</p>
+            </section>
+            <section id="task4-code" class="panel">
+                <h2>Код програми (ЛР №4)</h2>
+                <pre>
+                    // Завдання 1
+// Функція для виконання Завдання 1
+function task1() {
+    //  Отримуємо значення від користувача
+    const input = prompt("Введіть будь-яке число:");
+    
+    // Перетворюємо рядок у число
+    const value = Number(input);
+    
+    //  Виводимо значення в консоль за допомогою шаблонного рядка
+    console.log(`Користувач ввів значення: ${input}`);
+           
+    //  Перевірка знаку числа та виведення результату через alert()
+    if (value > 0) {
+        alert(`Число ${value} додатне`);
+    } else if (value &lt; 0) {
+        alert(`Число ${value} від’ємне`);
+    } else {
+        alert(`Число ${value} дорівнює нулю`);
+    }
+}
+
+// Запуск завдання
+task1();
+
+// =============================================================================================//
+
+// Завдання 2
+// Функція для виконання Завдання 2
+function task2() {
+    //  Запитуємо значення у користувача
+    const number = prompt("Введіть число від 1 до 4 (1-зима, 2-весна, 3-літо, 4-осінь):");
+    
+    let result;
+
+    //  Конструкція switch-case для перевірки значення
+    switch (number) {
+        case '1':
+            result = "зима";
+            break;
+        case '2':
+            result = "весна";
+            break;
+        case '3':
+            result = "літо";
+            break;
+        case '4':
+            result = "осінь";
+            break;
+        default:
+            result = "Некоректне значення! Потрібно ввести від 1 до 4.";
+            break;
+    }
+
+    // Виводимо повідомлення
+
+    alert(`Число ${number} - ${result}`);
+
+    //  Виводимо результат у консоль
+    console.log(`Для числа ${number} результат: ${result}`);
+}
+
+// Запуск другого завдання
+task2();
+
+// ================================================================================================//
+
+// Завдання 3
+// Функція для виконання Завдання 3
+function task3() {
+    // Ініціалізуємо користувачів та їхні паролі
+    const adminLogin = "Admin";
+    const adminPassword = "1234"; 
+    
+    const userLogin = "User";
+    const userPassword = "9876";
+
+    // Запитуємо логін у користувача
+    const loginInput = prompt("Введіть логін:");
+
+    let statusMessage = "";
+
+    // Перевірка логіна
+    if (loginInput === null) {
+        // Якщо натиснули Cancel або нічого не ввели
+        statusMessage = "Cancelled";
+        alert(statusMessage);
+    } 
+    else if (loginInput === adminLogin) {
+        // Якщо ввели "Admin" - запитуємо пароль
+        const passwordInput = prompt("Введіть пароль для Admin:");
+
+        if (passwordInput === null) {
+            statusMessage = "Cancelled";
+        } else if (passwordInput === adminPassword) {
+            statusMessage = "Hello, Admin";
+        } else {
+            statusMessage = "I don't know you";
+        }
+        alert(statusMessage);
+    } 
+    else if (loginInput === userLogin) {
+        // Якщо ввели "User" - запитуємо пароль
+        const passwordInput = prompt("Введіть пароль для User:");
+
+        if (passwordInput === null) {
+            statusMessage = "Cancelled";
+        } else if (passwordInput === userPassword) {
+            statusMessage = "Hello, User";
+        } else {
+            statusMessage = "I don't know you";
+        }
+        alert(statusMessage);
+    } 
+    else {
+        // Якщо ввели будь-який інший логін
+        statusMessage = "I don't know you";
+        alert(statusMessage);
+    }
+
+    
+    //  Виведення результату в консоль через шаблонний рядок (косі лапки)
+    console.log(`Результат авторизації для (${loginInput}): ${statusMessage}`);
+}
+
+// Запуск третього завдання
+task3();
+
+// ==============================================================================================//
+
+// Завдання 4
+
+//  Оголошуємо функцію makeTransaction з двома параметрами
+function makeTransaction(quantity, pricePerDroid) {
+    // Обчислюємо загальну вартість
+    const totalPrice = quantity * pricePerDroid;
+    
+    // Повертаємо сформований шаблонний рядок
+    return (`You ordered ${quantity} droids worth ${totalPrice} credits!`);
+}
+
+//  Створюємо головну функцію для демонстрації Завдання 4
+function task4() {
+    // Запитуємо дані у користувача через prompt
+    const userQuantity = prompt("Яку кількість дроїдів ви хочете замовити?");
+    const userPrice = prompt("Яка ціна одного дроїда?");
+
+    // Перетворюємо введені рядки на числа
+    const quantity = Number(userQuantity);
+    const price = Number(userPrice);
+
+    // Викликаємо функцію makeTransaction і зберігаємо результат у змінну
+    const message = makeTransaction(quantity, price);
+
+    // Виводимо результат в alert та в консоль
+    alert(message);
+    console.log(`Результат Завдання 4: ${message}`);
+}
+
+// Запуск четвертого завдання
+task4();
+
+// ====================================================================================================//
+
+
+// Завдання 5
+// Оголошуємо функцію checkForSpam, яка перевіряє текст
+function checkForSpam(message) {
+    // Переводимо весь рядок у нижній регістр
+    const lowerCaseMessage = message.toLowerCase();
+
+    // Перевіряємо, чи містить рядок слова "spam" або "sale"
+    if (lowerCaseMessage.includes("spam") || lowerCaseMessage.includes("sale")) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Головна функція для запуску та демонстрації Завдання 5
+function task5() {
+    // Запитуємо у користувача текст для перевірки
+    const userMessage = prompt("Введіть текст повідомлення для перевірки на спам:");
+
+    
+    // Викликаємо функцію перевірки
+    const isSpam = checkForSpam(userMessage);
+
+    // Готуємо повідомлення для виведення
+    let resultText = "";
+    if (isSpam) {
+        resultText = "Увага! У повідомленні виявлено спам або рекламу (true).";
+    } else {
+        resultText = "Повідомлення чисте, спаму не виявлено (false).";
+    }
+
+    // Виводимо в alert та консоль
+    alert(resultText);
+    console.log(`Результат перевірки тексту "${userMessage}": ${isSpam}`);
+}
+
+// Запуск п'ятого завдання
+task5();
+
+// ==================================================================================================//
+
+// Завдання 6
+// Функція фільтрації масиву
+function filterArray(numbers, value) {
+    const filteredNumbers = []; // Новий масив для результатів
+
+    // Цикл for для послідовного перебору всіх елементів масиву
+    for (let i = 0; i &lt; numbers.length; i++) {
+        // Якщо елемент більший за вказане значення, додаємо його в новий масив
+        if (numbers[i] > value) {
+            filteredNumbers.push(numbers[i]);
+        }
+    }
+
+    return filteredNumbers; // Повертаємо відфільтрований масив
+}
+
+// Головна функція для демонстрації Завдання 6
+function task6() {
+    // Створимо тестовий масив чисел
+    const myNumbers = [12, 5, 23, 8, 45, 3, 17, 1];
+    
+    // Запитаємо у користувача число-ліміт (критерій фільтрації)
+    const userInput = prompt(`Масив для перевірки: [${myNumbers.join(', ')}]\nВведіть число-ліміт (value):`);
+    
+    if (userInput === null) return;
+    const limitValue = Number(userInput);
+
+    // Викликаємо функцію
+    const resultArr = filterArray(myNumbers, limitValue);
+
+    // Виводимо результат
+    const message = `Елементи, які більші за ${limitValue}: [${resultArr.join(', ')}]`;
+    alert(message);
+    console.log(`Результат Завдання 6:, ${resultArr}`);
+}
+
+// Запуск шостого завдання
+task6();
+
+// ===================================================================================================//
+
+// Завдання 7
+
+// Функція для створення та заповнення масиву А випадковими числами
+function createArrayA(size) {
+    const arr = [];
+    for (let i = 0; i &lt; size; i++) {
+        // Заповнюємо випадковими числами від 1 до 20
+        arr.push(Math.floor(Math.random() * 20) + 1);
+    }
+    return arr;
+}
+
+// Функція для побудови масиву B за формулою b_i = max * a_i
+function generateArrayB(arrayA) {
+    // Шукаємо максимальний елемент за допомогою вбудованого методу Math.max
+    const max = Math.max(...arrayA);
+    console.log(`Максимальний елемент масиву A (max): ${max}`);
+
+    // Обчислюємо елементи масиву B
+    const arrayB = [];
+    for (let i = 0; i &lt; arrayA.length; i++) {
+        arrayB.push(max * arrayA[i]);
+    }
+    return arrayB;
+}
+
+// Функція сортування масиву за зменшенням методом ВСТАВКИ
+function insertionSortDescending(arr) {
+    // Робимо копію масиву, щоб не змінювати оригінальний
+    const sortedArr = [...arr]; 
+    
+    for (let i = 1; i &lt; sortedArr.length; i++) {
+        let key = sortedArr[i];
+        let j = i - 1;
+
+        // Оскільки сортуємо за зменшенням, рухаємо елементи, які менші за key
+        while (j >= 0 && sortedArr[j] &lt; key) {
+            sortedArr[j + 1] = sortedArr[j];
+            j = j - 1;
+        }
+        sortedArr[j + 1] = key;
+    }
+    return sortedArr;
+}
+
+// Головна функція демонстрації Завдання 7
+function task7() {
+    // Запитуємо кількість елементів у користувача
+    const userInput = prompt("Завдання 7 (Варіант 3).\nВведіть кількість елементів масиву А:");
+    if (userInput === null) return;
+
+    const size = Number(userInput);
+    if (isNaN(size) || size &lt;= 0) {
+        alert("Будь ласка, введіть коректне число більше нуля!");
+        return;
+    }
+
+    // Крок A: Створюємо масив А
+    const arrayA = createArrayA(size);
+    
+    // Крок B: Генеруємо масив B
+    const arrayB = generateArrayB(arrayA);
+
+    // Крок C: Сортуємо масив B за зменшенням
+    const sortedArrayB = insertionSortDescending(arrayB);
+
+    // Виводимо всі результати в консоль
+    console.log("РЕЗУЛЬТАТИ ЗАВДАННЯ 7 (Варіант 3)");
+    console.log("Вхідний масив A:", arrayA);
+    console.log("Згенерований масив B (max * a_i):", arrayB);
+    console.log("Масив B після сортування за зменшенням (метод вставки):", sortedArrayB);
+
+    // Показуємо alert користувачу
+    alert(
+        `Завдання 7 виконано успішно!\n +
+        Масив А: [${arrayA.join(", ")}]\n +
+        Масив В: [${arrayB.join(", ")}]\n +
+        Відсортований В: [${sortedArrayB.join(", ")}]\n +
+        Повні результати виведено в консоль (F12).`
+    );
+}
+
+// Запуск правильного сьомого завдання
+task7();
+
+                </pre>
+            </section>
+            <section id="task4-result" class="panel">
+                <h2>Результати роботи (ЛР №4)</h2>
+                <p>Усі завдання лабораторної роботи успішно виконуються. Результати обчислень та роботи з масивами виведені в консоль:</p>
+                
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.1/1.0.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 1.</p>
+                    </div>
+            
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.1/1.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 2.</p>
+                    </div>
+            
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.1/2.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 3.</p>
+                    </div>
+            
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.1/3.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 4.</p>
+                    </div>
+
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.1/4.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 5.</p>
+                    </div>
+            
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.1/5.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 6.</p>
+                    </div>
+
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.1/6.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 7.</p>
+                    </div>
+
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.1/7.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 8.</p>
+                    </div>
+
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.2/1.JPG" alt="Результат завдання 2" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 9.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.2/2.JPG" alt="Результат завдання 2" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 10.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.2/3.JPG" alt="Результат завдання 2" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 11.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.3/1.JPG" alt="Результат завдання 3" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 12.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.3/2.JPG" alt="Результат завдання 3" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 13.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.3/3.JPG" alt="Результат завдання 3" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 14.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.3/4.JPG" alt="Результат завдання 3" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 15.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.3/5.JPG" alt="Результат завдання 3" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 16.</p>
+                    </div>
+
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.3/6.JPG" alt="Результат завдання 3" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 17.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.3/7.JPG" alt="Результат завдання 3" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 18.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.3/8.JPG" alt="Результат завдання 3" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 19.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.3/9.JPG" alt="Результат завдання 3" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 20.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.3/10.JPG" alt="Результат завдання 3" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 21.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.4/1.JPG" alt="Результат завдання 4" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 22.</p>
+                    </div>
+
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.4/2.JPG" alt="Результат завдання 4" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 23.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.4/3.JPG" alt="Результат завдання 4" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 24.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.4/4.JPG" alt="Результат завдання 4" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 25.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.5/1.JPG" alt="Результат завдання 5" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 26.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.5/2.JPG" alt="Результат завдання 5" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 27.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.5/3.JPG" alt="Результат завдання 5" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 28.</p>
+                    </div>
+
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.5/4.JPG" alt="Результат завдання 5" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 29.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.5/5.JPG" alt="Результат завдання 5" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 30.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.5/6.JPG" alt="Результат завдання 5" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 31.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.5/7.JPG" alt="Результат завдання 5" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 32.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.5/8.JPG" alt="Результат завдання 5" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 33.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.6/1.JPG" alt="Результат завдання 6" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 34.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.6/2.JPG" alt="Результат завдання 6" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 35.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.6/3.JPG" alt="Результат завдання 6" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 36.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.7/1.JPG" alt="Результат завдання 7" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 37.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.7/2.JPG" alt="Результат завдання 7" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 38.</p>
+                    </div>
+
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img4/4.7/3.JPG" alt="Результат завдання 7" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 39.</p>
+                    </div>
+                    
+            
+                </div>
+            </section>
+            <section id="conclusions4" class="panel">
+                <h2>Висновки ЛР №4</h2>
+                <p>Під час виконання ЛР №4 я вивчила базовий синтаксис створення об'єктів у JavaScript та освоїла сучасні методи перебору масивів, що дозволяють писати чистий та лаконічний код.</p>
+            </section>
+
+            <section id="descr5" class="panel">
+                <h2>Лабораторна робота №5. Прототипи, класи та ООП у JS.</h2>
+                <p><b>Тема:</b> Прототипне наслідування, класи та контекст виконання (this) у мові JavaScript.</p>
+                <p><b>Мета:</b> Опанувати принципи об'єктно-орієнтованого програмування в JS: створення класів, методів, приватних властивостей та наслідування.</p>
+            </section>
+            <section id="task5-code" class="panel">
+                <h2>Код програми (ЛР №5)</h2>
+                <pre>
+                    // ЛАБОРАТОРНА РОБОТА №5 — ЗАВДАННЯ 1 (ВАРИАНТ 1)
+
+
+Колбек-функція для логування всього об'єкта товару
+function logProduct(product) {
+    console.log("Колбек logProduct отримав об'єкт:", product);
+}
+
+// Колбек-функція для підрахунку та логування загальної вартості
+function logTotalPrice(product) {
+    // Деструктуризуємо властивості об'єкта для зручності
+    const { name, price, quantity } = product;
+    const totalPrice = price * quantity;
+    console.log(`Колбек logTotalPrice: Загальна вартість товару "${name}" становить ${totalPrice} грн.`);
+}
+
+// Основна функція, яка додає унікальний ID та викликає відповідний колбек
+function createProduct(obj, callback) {
+    // Створюємо новий об'єкт, копіюючи старий і додаючи унікальний id (через обрання поточного часу в мілісекундах)
+    const productWithId = {
+        id: Date.now() + Math.floor(Math.random() * 1000), // Генерація унікального ID
+        ...obj
+    };
+
+    // Викликаємо колбек, який передали як аргумент
+    callback(productWithId);
+}
+
+// Головна функція для запуску та демонстрації Завдання 1
+function runLab5Task1() {
+    console.log("СТАРТ ЛР №5 ЗАВДАННЯ 1");
+
+    // Створюємо тестовий об'єкт товару БЕЗ id
+    const testProduct = {
+        name: "Ноутбук HP",
+        price: 25000,
+        quantity: 2
+    };
+
+    console.log("Початковий об'єкт товару:", testProduct);
+
+    // Демонстрація 1: Передаємо перший колбек (logProduct)
+    console.log("\nВиклик з колбеком logProduct");
+    createProduct(testProduct, logProduct);
+
+    // Демонстрація 2: Передаємо другий колбек (logTotalPrice)
+    console.log("\nВиклик з колбеком logTotalPrice");
+    createProduct(testProduct, logTotalPrice);
+    
+    alert("Завдання 1 (ЛР5) виконано! Результати роботи колбеків у консолі.");
+}
+
+// Автоматичний запуск завдання
+runLab5Task1();
+
+// ==================================================================================================//
+
+
+// // ЛАБОРАТОРНА РОБОТА №5 — ЗАВДАННЯ 1 (ВАРИАНТ 3)
+
+// Початковий об'єкт медикаментів
+const medicines = {
+    Aspirin: new Date("2026-08-15"), // Аспірин
+    Noshpa: new Date("2025-07-02"),  // Ношпа (протермінована)
+    Alphacholine: new Date("2024-12-21"), // Альфахолін (протермінований)
+    Analgin: new Date("2027-05-01"), // Анальгін (діючий)
+    Asparcam: new Date("2026-04-18"), // Аспаркам (протермінований)
+};
+
+function runLab5Task1Variant3() {
+    console.log("СТАРТ ЛР №5 ЗАВДАННЯ 1 (ВАРІАНТ 3)");
+    
+    // Отримуємо поточну дату для перевірки терміну придатності
+    const currentDate = new Date(); 
+    console.log(`Поточна дата для перевірки: ${currentDate.toLocaleDateString()}`);
+
+    // Перетворюємо об'єкт у масив масивів [назва, дата] за допомогою Object.entries()
+    const medicinesEntries = Object.entries(medicines);
+
+    // Фільтруємо масив: залишаємо тільки ті ліки, у яких дата придатності БІЛЬША або РІВНА поточній
+    // Використовуємо стрілочну функцію
+    const validMedicines = medicinesEntries.filter(([name, expiryDate]) => expiryDate >= currentDate);
+
+    // Сортуємо відфільтровані ліки у хронологічному порядку (від найближчого терміну до найвіддаленішого)
+    // Використовуємо стрілочну функцію
+    validMedicines.sort((a, b) => a[1] - b[1]);
+
+    // Витягуємо лише назви препаратів (як вимагає умова) за допомогою .map()
+    // Використовуємо стрілочну функцію
+    const resultMedicinesNames = validMedicines.map(([name]) => name);
+
+    // Виводимо фінальний результат у консоль
+    console.log("Список придатних медикаментів (відсортований хронологічно):", resultMedicinesNames);
+
+    alert(`Варіант 3 виконано!\nПридатні ліки: [${resultMedicinesNames.join(", ")}]\nПовний лог у консолі.`);
+}
+
+// Запуск завдання
+runLab5Task1Variant3();
+
+// ================================================================================================//
+
+// ЛАБОРАТОРНА РОБОТА №5 — ЗАВДАННЯ 1 (ВАРИАНТ 5)
+
+// Початковий масив фруктів з картки завдань
+const fruits = [
+    { name: "apple", price: 200 },
+    { name: "orange", price: 300 },
+    { name: "grapes", price: 750 },
+];
+
+// Стрілочна функція для обробки масиву
+const updateFruits = (productsArray) => {
+    return productsArray.map((product, index) => {
+        // Обчислюємо нову ціну зі знижкою 20%
+        const discountedPrice = product.price * 0.8;
+
+        // Повертаємо новий об'єкт із додаванням унікального id
+        return {
+            id: Date.now() + index + Math.floor(Math.random() * 100),
+            name: product.name,
+            price: discountedPrice
+        };
+    });
+};
+
+// Головна функція для демонстрації результату
+function runLab5Task1Variant5() {
+    console.log("СТАРТ ЛР №5 ЗАВДАННЯ 1 (ВАРІАНТ 5)");
+    console.log("Початковий масив фруктів:", fruits);
+
+    // Викликаємо функцію обробки
+    const updatedFruitsArray = updateFruits(fruits);
+
+    // Виводимо оновлений масив у консоль
+    console.log("Оновлений масив фруктів:", updatedFruitsArray);
+
+    // Формуємо красивий текст для спливаючого вікна
+    const fruitsInfo = updatedFruitsArray
+        .map(f => `ID: ${f.id} | Назва: ${f.name} | Ціна зі знижкою: ${f.price} грн`)
+        .join("\n");
+
+    alert(`Варіант 5 виконано успішно!\n\nОновлені фрукти:\n${fruitsInfo}`);
+}
+
+// Запуск завдання
+runLab5Task1Variant5();
+
+// ==================================================================================================//
+
+// ЛАБОРАТОРНА РОБОТА №5 — ЗАВДАННЯ 1 (ВАРИАНТ 7)
+
+// Оголошуємо клас Client з приватними властивостями
+class Client {
+    // Приватні властивості обов'язково оголошуються на початку класу через #
+    #login;
+    #email;
+
+    // Конструктор класу для ініціалізації початкових значень
+    constructor(login, email) {
+        this.#login = login;
+        this.#email = email;
+    }
+
+    // Геттер для отримання приватного логіну
+    get login() {
+        return this.#login;
+    }
+
+    // Сеттер для зміни приватного логіну
+    set login(newLogin) {
+        if (newLogin.trim() === "") {
+            console.log("Помилка: Логін не може бути порожнім рядком!");
+            return;
+        }
+        this.#login = newLogin;
+    }
+
+    // Геттер для отримання приватного емейлу
+    get email() {
+        return this.#email;
+    }
+
+    // Сеттер для зміни приватного емейлу (з базовою перевіркою на символ @)
+    set email(newEmail) {
+        if (!newEmail.includes("@")) {
+            console.log(`Помилка: Рядок "${newEmail}" не є коректним емейлом!`);
+            return;
+        }
+        this.#email = newEmail;
+    }
+}
+
+// Головна функція для демонстрації роботи класу Client
+function runLab5Task1Variant7() {
+    console.log("СТАРТ ЛР №5 ЗАВДАННЯ 1 (ВАРІАНТ 7)");
+
+    // Створюємо екземпляр класу (об'єкт клієнта)
+    const client = new Client("tetiana_v", "tetiana@example.com");
+
+    // Демонстрація роботи геттерів (звертаємось без дужок, як до звичайних властивостей)
+    console.log("Початковий логін клієнта:", client.login);
+    console.log("Початковий емейл клієнта:", client.email);
+
+    // Спробуємо змінити дані через сеттери
+    console.log("\nОновлення даних через сеттери");
+    client.login = "tetiana_new";
+    client.email = "voloshyna.t@kpi.ua";
+
+    console.log("Новий логін:", client.login);
+    console.log("Новий емейл:", client.email);
+
+    // Перевірка захисту (спроба ввести некоректний емейл)
+    console.log("\nПеревірка захисту приватних властивостей");
+    client.email = "неправильний_email.com"; // Виведе помилку в консоль
+    console.log("Емейл залишився без змін:", client.email);
+
+    alert(`Варіант 7 виконано!\n\nКлієнт: ${client.login}\nEmail: ${client.email}\n\nПовний лог перевірки захисту у консолі.`);
+}
+
+// Запуск сьомого варіанта
+runLab5Task1Variant7();
+
+// ==================================================================================================
+
+// ЛАБОРАТОРНА РОБОТА №5 — ЗАВДАННЯ 1 (ВАРИАНТ 9)
+
+// Початковий масив твітів з картки завдань
+const tweets = [
+    { id: "000", likes: 5, tags: ["js", "nodejs"] },
+    { id: "001", likes: 2, tags: ["html", "css"] },
+    { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+    { id: "003", likes: 8, tags: ["css", "react"] },
+    { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+];
+
+// Стрілочна функція для підрахунку кількості тегів
+const countTags = (tweetsArray) => {
+    // Використовуємо .reduce() для акумуляції результату в один об'єкт
+    return tweetsArray.reduce((acc, tweet) => {
+        // Деструктуризуємо властивість tags з об'єкта твіта
+        const { tags } = tweet;
+
+        // Перебираємо масив тегів конкретного твіта
+        tags.forEach(tag => {
+            // Якщо такий тег вже є в об'єкті acc, збільшуємо його лічильник на 1,
+            // якщо немає — створюємо із початковим значенням 1
+            acc[tag] = acc[tag] ? acc[tag] + 1 : 1;
+        });
+
+        return acc; // Повертаємо оновлений акумулятор на наступну ітерацію
+    }, {}); // Початкове значення акумулятора — порожній об'єкт {}
+};
+
+// Головна функція для демонстрації результату Варіанта 9
+function runLab5Task1Variant9() {
+    console.log("СТАРТ ЛР №5 ЗАВДАННЯ 1 (ВАРІАНТ 9)");
+    console.log("Початковий масив твітів:", tweets);
+
+    // Викликаємо функцію підрахунку
+    const tagsStatistics = countTags(tweets);
+
+    // Виводимо результат у консоль
+    console.log("Статистика тегів:", tagsStatistics);
+
+    // Перетворюємо об'єкт у красивий рядок для виведення в alert
+    const statisticsString = Object.entries(tagsStatistics)
+        .map(([tag, count]) => `${tag}: ${count}`)
+        .join("\n");
+
+    alert(
+        `Варіант 9 виконано успішно!
+        Результат підрахунку тегів:\n${statisticsString}\n
+        Результат збігається з очікуваним.
+    `);
+}
+
+// Запуск дев'ятого варіанта
+runLab5Task1Variant9();
+
+// ===================================================================================================
+
+// ЛАБОРАТОРНА РОБОТА №5 — ЗАВДАННЯ 2 (ВАРИАНТ 1)
+
+// Початковий масив об'єктів з картки завдань
+const data = [
+    { id: 1, values: [1, 2, 3] },
+    { id: 2, values: [4, 5, 6] },
+    { id: 3, values: [7, 8, 9] },
+];
+
+// Стрілочна функція для збирання усіх значень в один масив
+const collectAllValues = (arrayData) => {
+    // Метод .flatMap() мапить кожен елемент (витягує values) і розгортає результат в один рівень
+    return arrayData.flatMap(item => item.values);
+};
+
+// Головна функція для демонстрації результату Завдання 2
+function runLab5Task2Variant1() {
+    console.log("СТАРТ ЛР №5 ЗАВДАННЯ 2 (ВАРІАНТ 1)");
+    console.log("Початковий масив data:", data);
+
+    // Викликаємо функцію збирання значень
+    const combinedValues = collectAllValues(data);
+
+    // Виводимо результат у консоль
+    console.log("Об'єднаний масив усіх значений:", combinedValues);
+
+    // Показуємо alert користувачу
+    alert(
+        `Завдання 2 (Варіант 1) виконано успішно!\n 
+        Отриманий масив значень:\n[${combinedValues.join(", ")}]\n 
+        Результат точно збігається з очікуваним.
+    `);
+}
+
+// Запуск другого завдання
+runLab5Task2Variant1();
+
+// =================================================================================================
+
+// ЛАБОРАТОРНА РОБОТА №5 — ЗАВДАННЯ 2 (ВАРІАНТ 3)
+
+// Початковий масив чисел з картки завдань
+const numbers = [2, 4, 6, 8, 10];
+
+// Стрілочна функція, яка перевіряє, чи всі числа в масиві парні
+const checkAllEven = (arrayNumbers) => {
+    // Метод .every() повертає true, якщо для кожного елемента умова (num % 2 === 0) виконується
+    return arrayNumbers.every(num => num % 2 === 0);
+};
+
+// Головна функція для демонстрації результату Завдання 2 (Варіант 3)
+function runLab5Task2Variant3() {
+    console.log("СТАРТ ЛР №5 ЗАВДАННЯ 2 (ВАРІАНТ 3)");
+    console.log("Масив для перевірки:", numbers);
+
+    // Викликаємо функцію перевірки
+    const isAllEven = checkAllEven(numbers);
+
+    // Виводимо результат у консоль
+    console.log("Чи всі елементи парні?:", isAllEven);
+
+    // Показуємо alert користувачу
+    alert(
+        `Завдання 2 (Варіант 3) виконано успішно!\n 
+        Результат перевірки масиву [${numbers.join(", ")}] на парність: ${isAllEven}\n 
+        Очікуваний результат (true) отримано!`
+    );
+}
+
+// Запуск завдання
+runLab5Task2Variant3();
+
+// =====================================================================================================
+
+// ЛАБОРАТОРНА РОБОТА №5 — ЗАВДАННЯ 2 (ВАРІАНТ 5)
+
+// Початковий масив рядків з картки завдань
+const stringArray = ['banana', 'orange', 'apple', 'pear'];
+
+// Стрілочна функція для сортування масиву рядків за алфавітом
+const sortAlphabetically = (array) => {
+    // Створюємо копію масиву через spread-оператор [...array], щоб не мутувати оригінальний,
+    // і сортуємо за допомогою localeCompare для правильного порівняння рядків
+    return [...array].sort((a, b) => a.localeCompare(b));
+};
+
+// Головна функція для демонстрації результату Завдання 2 (Варіант 5)
+function runLab5Task2Variant5() {
+    console.log("СТАРТ ЛР №5 ЗАВДАННЯ 2 (ВАРІАНТ 5)");
+    console.log("Початковий масив рядків:", stringArray);
+
+    // Викликаємо функцію сортування
+    const sortedResult = sortAlphabetically(stringArray);
+
+    // Виводимо результат у консоль
+    console.log("Відсортований масив:", sortedResult);
+
+    // Показуємо alert користувачу
+    alert(
+        `Завдання 2 (Варіант 5) виконано успішно!\n
+        Початковий: [${stringArray.join(", ")}]\n +
+        Відсортований за алфавітом: [${sortedResult.join(", ")}]\n
+        Результат точно збігається з очікуваним.`
+    );
+}
+
+// Запуск завдання
+runLab5Task2Variant5();
+
+
+// ==================================================================================================
+
+// ЛАБОРАТОРНА РОБОТА №5 — ЗАВДАННЯ 2 (ВАРІАНТ 7)
+
+class Calculator {
+    constructor() {
+        this.result = 0; // Поточне значення обчислень
+    }
+
+    // Встановлює початкове значення
+    number(value) {
+        this.result = value;
+        return this; // Повертаємо сам об'єкт (this) для забезпечення ланцюжка
+    }
+
+    // Операція додавання
+    add(value) {
+        this.result += value;
+        return this;
+    }
+
+    // Операція віднімання
+    subtract(value) {
+        this.result -= value;
+        return this;
+    }
+
+    // Операція множення
+    multiply(value) {
+        this.result *= value;
+        return this;
+    }
+
+    // Операція ділення з перевіркою на нуль
+    divide(value) {
+        if (value === 0) {
+            console.error("Помилка: Ділення на нуль неможливе!");
+            alert("Критична помилка: Ділення на нуль перервало ланцюжок!");
+            return this;
+        }
+        this.result /= value;
+        return this;
+    }
+
+    // Повертає фінальний результат усіх операцій
+    getResult() {
+        return this.result;
+    }
+}
+
+// Головна функція для запуску та взаємодії з користувачем
+function runDynamicCalculator() {
+    console.log("СТАРТ: ЗАВДАННЯ 2, ВАРІАНТ 7 (КАЛЬКУЛЯТОР)");
+
+    // Запитуємо стартове число
+    const startInput = prompt("Калькулятор з ланцюжковим викликом методів.\nВведіть початкове число:");
+   
+    // Послідовно запитуємо числа для кожної математичної операції
+    const addInput = prompt(`Поточний результат: ${startInput}\nСкільки ДОДАТИ?`);
+    if (addInput === null) return;
+
+    // Рахуємо проміжне значення суто для красивого відображення у наступному віконці
+    const currentAfterAdd = Number(startInput) + Number(addInput);
+    const subInput = prompt(`Поточний результат: ${currentAfterAdd}\nСкільки ВІДНЯТИ?`);
+    if (subInput === null) return;
+
+    const currentAfterSub = currentAfterAdd - Number(subInput);
+    const mulInput = prompt(`Поточний результат: ${currentAfterSub}\nНа скільки ПОМНОЖИТИ?`);
+    if (mulInput === null) return;
+
+    const currentAfterMul = currentAfterSub * Number(mulInput);
+    const divInput = prompt(`Поточний результат: ${currentAfterMul}\nНа скільки ПОДІЛИТИ?`);
+    if (divInput === null) return;
+
+    // Ініціалізуємо клас калькулятора
+    const calc = new Calculator();
+
+    // Запускаємо фірмовий ланцюжковий виклик (Method Chaining)
+    const finalResult = calc
+        .number(Number(startInput))
+        .add(Number(addInput))
+        .subtract(Number(subInput))
+        .multiply(Number(mulInput))
+        .divide(Number(divInput))
+        .getResult();
+
+    // Виводимо хід виконання в консоль
+    console.log(`Користувацький вираз: ${startInput} + ${addInput} - ${subInput} * ${mulInput} / ${divInput}`);
+    console.log("Результат обчислення об'єкта:", finalResult);
+
+    // Виводимо фінальний звіт користувачу
+    alert(
+        `Обчислення успішно завершено!\n\n +
+        Ваш математичний ланцюжок:\n +
+        ${startInput} + ${addInput} - ${subInput} * ${mulInput} / ${divInput} = ${finalResult}\n\n +
+        Повний лог операцій збережено в консолі.`
+    );
+}
+
+// Автоматичний запуск програми при завантаженні сторінки
+runDynamicCalculator();
+
+
+                </pre>
+            </section>
+            <section id="task5-result" class="panel">
+                <h2>Результат роботи (ЛР №5)</h2>
+                <p>Класи успішно ініціалізуються, приватні поля захищені від прямого доступу ззовні згідно з принципами інкапсуляції.</p>
+               
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.1.1/1.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 1.</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.1.1/2.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 2.</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.1.3/1.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 3.</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.1.3/2.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 4.</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.1.5/1.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 5.</p>
+                </div> 
+                
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.1.5/2.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 6.</p>
+                </div> 
+                
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.1.7/1.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 7.</p>
+                </div> 
+                
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.1.7/2.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 8.</p>
+                </div> 
+                
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.1.9/1.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 9.</p>
+                </div>
+
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.1.9/2.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 10.</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.2.1/1.JPG" alt="Результат завдання 2" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 11.</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.2.1/2.JPG" alt="Результат завдання 2" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 12.</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.2.3/1.JPG" alt="Результат завдання 2" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 13.</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.2.3/2.JPG" alt="Результат завдання 2" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 14.</p>
+                </div>
+
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.2.5/1.JPG" alt="Результат завдання 2" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 15.</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.2.5/2.JPG" alt="Результат завдання 2" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 16.</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.2.7/1.JPG" alt="Результат завдання 2" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 17.</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.2.7/2.JPG" alt="Результат завдання 2" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 18.</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.2.7/3.JPG" alt="Результат завдання 2" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 19.</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.2.7/4.JPG" alt="Результат завдання 2" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 20.</p>
+                </div>
+
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.2.7/5.JPG" alt="Результат завдання 2" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 21.</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.2.7/6.JPG" alt="Результат завдання 2" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 22.</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <img src="/images/img5/5.2.7/7.JPG" alt="Результат завдання 2" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                    <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 23.</p>
+                </div>
+            </div>
+            </section>
+            <section id="conclusions5" class="panel">
+                <h2>Висновки ЛР №5</h2>
+                <p>Виконання ЛР №5 допомогло мені розібратися з об'єктною моделлю в JS, навчитися застосовувати класи для структурування логіки та керувати контекстом виклику функцій.</p>
+            </section>
+
+            <section id="descr6" class="panel">
+                <h2>Лабораторна робота №6. Об'єктна модель документа (DOM) та Події.</h2>
+                <p><b>Тема:</b> Маніпуляція DOM-елементами сторінки, створення слухачів подій та робота з формами.</p>
+                <p><b>Мета:</b> Навчитися динамічно змінювати структуру та стилі сторінки, обробляти події введення, кліків та сабміту форм.</p>
+            </section>
+            <section id="task6-code" class="panel">
+                <h2>Код програми (ЛР №6)</h2>
+                <pre>
+                    // ЛАБОРАТОРНА РОБОТА №6 — ЗАВДАННЯ 1 (ВАРІАНТ 1)
+
+// Отримуємо посилання на елементи DOM за їхніми ID
+const showMeBtn = document.getElementById('show-me-btn');
+const task1Input = document.getElementById('task1-input');
+
+// Додаємо слухач події "click" на кнопку
+showMeBtn.addEventListener('click', () => {
+    // Отримуємо поточне значення з інпута
+    const inputValue = task1Input.value;
+    
+    // Виводимо його в консоль
+    console.log("Значення з поля введення (Завдання 1):", inputValue);
+});
+
+// ЛАБОРАТОРНА РОБОТА №6 — ЗАВДАННЯ 2 (ВАРІАНТ 3)
+
+const passwordInput = document.getElementById('password-input');
+const togglePasswordBtn = document.getElementById('toggle-password-btn');
+
+togglePasswordBtn.addEventListener('click', () => {
+    // Перевіряємо поточний тип інпута
+    if (passwordInput.type === 'text') {
+        // Якщо текст видно — ховаємо його (перетворюємо на зірочки)
+        passwordInput.type = 'password';
+        togglePasswordBtn.textContent = 'Розкрити';
+    } else {
+        // Якщо приховано — розкриваємо назад
+        passwordInput.type = 'text';
+        togglePasswordBtn.textContent = 'Приховати';
+    }
+});
+
+// ЛАБОРАТОРНА РОБОТА №6 — ЗАВДАННЯ 3 (ВАРІАНТ 5)
+
+const placeDiv = document.getElementById('place');
+
+window.addEventListener('click', (event) => {
+    // Перевіряємо, чи є ціль кліку (event.target) нашим зеленим прямокутником
+    if (event.target === placeDiv) {
+        console.log(true);
+    } else {
+        console.log(false);
+    }
+});
+
+// ЛАБОРАТОРНА РОБОТА №6 — ЗАВДАННЯ 4 (ВАРІАНТ 7)
+
+// Знаходимо всі елементи лінійного списку категорій з класом "item"
+const categoryItems = document.querySelectorAll('#categories .item');
+
+// Виводимо загальну кількість категорій
+console.log(`Number of categories: ${categoryItems.length}`);
+
+// Перебираємо кожну категорію за допомогою forEach
+categoryItems.forEach(item => {
+    // Знаходимо заголовок h2 всередині поточної категорії
+    const categoryName = item.querySelector('h2').textContent;
+    
+    // Знаходимо всі li всередині внутрішнього списку поточної категорії
+    const elementsCount = item.querySelectorAll('ul li').length;
+    
+    // Виводимо результат у консоль
+    console.log(`Category: ${categoryName}`);
+    console.log(`Elements: ${elementsCount}`);
+});
+
+// ЛАБОРАТОРНА РОБОТА №6 — ЗАВДАННЯ 5 (ВАРІАНТ 8)
+
+const loginForm = document.querySelector('.login-form');
+
+loginForm.addEventListener('submit', (event) => {
+    // Зупиняємо перезавантаження сторінки
+    event.preventDefault();
+    
+    // Отримуємо доступ до елементів форми
+    const { email, password } = event.currentTarget.elements;
+    
+    // Очищаємо значення від пробілів по краях за допомогою trim()
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+    
+    // Перевіряємо, чи всі поля заповнені
+    if (emailValue === '' || passwordValue === '') {
+        alert('All form fields must be filled in.');
+        return; // Перериваємо виконання, якщо хоч одне поле порожнє
+    }
+    
+    // Якщо все заповнено, формуємо об'єкт з даними
+    const formData = {
+        email: emailValue,
+        password: passwordValue
+    };
+    
+    // Виводимо об'єкт у консоль
+    console.log('Submitted Form Data:', formData);
+    
+    // Очищаємо поля форми
+    event.currentTarget.reset();
+});
+
+// ЛАБОРАТОРНА РОБОТА №6 — ЗАВДАННЯ 6 (ВАРІАНТ 9)
+
+// Функція для генерування випадкового кольору (з методички)
+function getRandomHexColor() {
+    return `#${Math.floor(Math.random() * 16777215)
+        .toString(16)
+        .padStart(6, 0)}`;
+}
+
+// Знаходимо елементи віджета
+const changeColorBtn = document.querySelector('.change-color');
+const colorSpan = document.querySelector('.color');
+
+// Додаємо слухач кліку
+changeColorBtn.addEventListener('click', () => {
+    const randomColor = getRandomHexColor();
+    
+    // Змінюємо колір фону усього body через інлайн-стиль
+    document.body.style.backgroundColor = randomColor;
+    
+    // Виводимо текстове значення кольору в span
+    colorSpan.textContent = randomColor;
+});
+
+
+// ЛАБОРАТОРНА РОБОТА №6 — ЗАВДАННЯ 7 (ВАРІАНТ 10)
+
+// Отримуємо посилання на потрібні елементи DOM
+const inputNum = document.querySelector('#controls input');
+const createBtn = document.querySelector('[data-create]');
+const destroyBtn = document.querySelector('[data-destroy]');
+const boxesContainer = document.querySelector('#boxes');
+
+// Функція для створення колекції елементів
+function createBoxes(amount) {
+    // Спочатку повністю очищаємо контейнер від попередніх кубиків
+    boxesContainer.innerHTML = '';
+    
+    // Тимчасовий масив (масив елементів) для швидкого додавання в DOM
+    const elementsArray = [];
+    
+    // Початковий розмір першого кубика
+    let size = 30;
+    
+    for (let i = 0; i &lt; amount; i++) {
+        const div = document.createElement('div');
+        div.style.width = `${size}px`;
+        div.style.height = `${size}px`;
+        div.style.backgroundColor = getRandomHexColor();
+        
+        // Збільшуємо розмір для наступного кубика на 10px
+        size += 10;
+        
+        elementsArray.push(div);
+    }
+    
+    // Додаємо всі створені div в контейнер за один раз
+    boxesContainer.append(...elementsArray);
+}
+
+// Функція для повного очищення
+function destroyBoxes() {
+    boxesContainer.innerHTML = '';
+}
+
+// Слухач на кнопку Create
+createBtn.addEventListener('click', () => {
+    const amount = parseInt(inputNum.value, 10);
+    
+    // Валідація: перевіряємо чи число знаходиться в межах від 1 до 100
+    if (amount >= 1 && amount &lt;= 100) {
+        createBoxes(amount);
+        inputNum.value = ''; // Очищаємо поле введення після створення
+    } else {
+        alert('Please enter a number between 1 and 100!');
+    }
+});
+
+// Слухач на кнопку Destroy
+destroyBtn.addEventListener('click', destroyBoxes);
+                </pre>
+            </section>
+            <section id="task6-result" class="panel">
+                <h2>Результат роботи (ЛР №6)</h2>
+                <p>Елементи інтерфейсу динамічно реагують на дії користувача (кліки, введення пароля), форми валідуються та обробляються.</p>
+            
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img6/1.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 1.</p>
+                    </div>
+
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img6/2.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 2.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img6/3.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 3.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img6/4.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 4.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img6/5.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 5.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img6/6.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 6.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img6/7.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 7.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img6/8.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 8.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img6/9.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 9.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img6/10.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 10.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img6/11.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 11.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img6/12.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 12.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img6/13.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 13.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img6/14.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 14.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img6/15.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 15.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img6/16.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 16.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img6/17.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 17.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img6/18.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 18.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img6/19.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 19.</p>
+                    </div>
+                    
+                </div>
+            </section>
+            <section id="conclusions6" class="panel">
+                <h2>Висновки ЛР №6</h2>
+                <p>У ЛР №6 я здобула важливі навички зв'язування скриптів з HTML-розміткою сторінки, що є основою створення інтерактивних веб-інтерфейсів.</p>
+            </section>
+
+            <section id="descr7" class="panel">
+                <h2>Лабораторна робота №7. Делегування подій. Бібліотеки.</h2>
+                <p><b>Тема:</b> Оптимізація обробки подій методом делегування та підключення зовнішніх бібліотек.</p>
+                <p><b>Мета:</b> Створити динамічну галерею зображень з відкриттям великих копій у модальному вікні через бібліотеку basicLightbox.</p>
+            </section>
+            <section id="task7-code" class="panel">
+                <h2>Код програми (ЛР №7)</h2>
+                <pre>
+                    // Масив зображень для галереї
+                    const images = [
+                        {
+                          preview: 'https://images.unsplash.com/photo-1500627869374-13cd993b1115?auto=format&fit=crop&w=400&q=80',
+                          original: 'https://images.unsplash.com/photo-1500627869374-13cd993b1115?auto=format&fit=crop&w=1200&q=90',
+                          description: 'Мальовничі зелені пагорби під хмарами',
+                        },
+                        {
+                          preview: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=400&q=80',
+                          original: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=90',
+                          description: 'Туманний ранок у густому лісі',
+                        },
+                        {
+                          preview: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=400&q=80',
+                          original: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=90',
+                          description: 'Сонячне проміння крізь крони дерев',
+                        },
+                        {
+                          preview: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80',
+                          original: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=90',
+                          description: 'Захід сонця на тропічному пляжі',
+                        }
+                      ];
+                      
+                      // 1. Знаходимо наш список у DOM
+                      const galleryContainer = document.querySelector('.gallery');
+                      
+                      // 2. Функція для створення HTML-розмітки
+                      function createGalleryMarkup(items) {
+                        return items
+                          .map(
+                            ({ preview, original, description }) => 
+                          <li class="gallery-item">
+                            <a class="gallery-link" href="${original}">
+                              <img
+                                class="gallery-image"
+                                src="${preview}"
+                                data-source="${original}"
+                                alt="${description}"
+                              />
+                            </a>
+                          </li>
+                        
+                          )
+                          .join('');
+                      }
+                      
+                      // 3. Генеруємо та додаємо розмітку в DOM
+                      galleryContainer.innerHTML = createGalleryMarkup(images);
+                      
+                      // 4. Додаємо слухач подій (Делегування)
+                      galleryContainer.addEventListener('click', (event) => {
+                        event.preventDefault();
+                      
+                        // Перевіряємо, чи клікнули по картинці
+                        const isImageClicked = event.target.classList.contains('gallery-image');
+                        if (!isImageClicked) return;
+                      
+                        // Отримуємо посилання на велике зображення (data-source)
+                        const largeImageUrl = event.target.dataset.source;
+                        console.log('Посилання на велике зображення:', largeImageUrl);
+                      
+                        // Створюємо та відкриваємо модальне вікно бібліотеки basicLightbox
+                        const instance = basicLightbox.create(
+                          <div class="modal">
+                              <img src="${largeImageUrl}" alt="${event.target.alt}" width="800">
+                          </div>
+                        );
+                      
+                        instance.show();
+                      });
+                </pre>
+            </section>
+            <section id="task7-result" class="panel">
+                <h2>Результат роботи (ЛР №7)</h2>
+                <p>При кліку на будь-яку картку галереї успішно спрацьовує прийом делегування подій і відкривається модальне вікно з великим фото.</p>
+            
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
+                    <div style="flex: 1; min-width: 280px; max-width: 450px; text-align: center; background: #fff; padding: 12px; border: 1px solid #e7bce5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <img src="/images/img7/1.JPG" alt="Результат завдання 1" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin: 0;">
+                        <p style="font-size: 13px; color: #6a297b; font-style: italic; margin-top: 8px;">Рис. 1.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="conclusions7" class="panel">
+                <h2>Висновки ЛР №7</h2>
+                <p>Виконання ЛР №7 показало переваги використання делегування для оптимізації швидкодії та навчило інтегрувати плагіни для покращення UX сайту.</p>
+            </section>
         </main>
     </div>
 
@@ -434,34 +2052,6 @@
         <p>© 2025 Волошина Тетяна. Всі права захищені.</p>
     </footer>
 
-    <script>
-       /* // Показати підменю для "Структура документа"
-        const strukturaLink = document.querySelector('a[href="#struktura"]');
-        const submenu = document.getElementById('submenu-struktura');
-
-        strukturaLink.addEventListener('click', () => {
-            submenu.style.display = 'block';
-        });*/
-
-    document.querySelectorAll('.nav-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        // Ховаємо всі меню
-        document.querySelectorAll('.side-nav').forEach(nav => nav.classList.remove('active'));
-        
-        // Отримуємо ID цільового меню (наприклад, #lab2)
-        const targetId = btn.getAttribute('href').replace('#', '');
-        const targetMenu = document.getElementById(targetId + '-menu');
-        
-        if (targetMenu) {
-            targetMenu.classList.add('active');
-        }
-         });
-        });
-
-        // Логіка для підменю "Структура"
-        document.querySelector('a[href="#struktura"]').addEventListener('click', () => {
-        document.getElementById('submenu-struktura').style.display = 'block';
-        });
-    </script>
+    <script src="report.js"></script>
 </body>
 </html>
