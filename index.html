@@ -1973,77 +1973,64 @@ destroyBtn.addEventListener('click', destroyBoxes);
             <section id="task7-code" class="panel">
                 <h2>Код програми (ЛР №7)</h2>
                 <pre>
-                    // Масив зображень для галереї
                     const images = [
-                        {
-                          preview: 'https://images.unsplash.com/photo-1500627869374-13cd993b1115?auto=format&fit=crop&w=400&q=80',
-                          original: 'https://images.unsplash.com/photo-1500627869374-13cd993b1115?auto=format&fit=crop&w=1200&q=90',
-                          description: 'Мальовничі зелені пагорби під хмарами',
-                        },
-                        {
-                          preview: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=400&q=80',
-                          original: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=90',
-                          description: 'Туманний ранок у густому лісі',
-                        },
-                        {
-                          preview: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=400&q=80',
-                          original: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=90',
-                          description: 'Сонячне проміння крізь крони дерев',
-                        },
-                        {
-                          preview: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80',
-                          original: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=90',
-                          description: 'Захід сонця на тропічному пляжі',
-                        }
-                      ];
+                    {
+                      preview: "https://picsum.photos/id/1015/300/200",
+                      original: "https://picsum.photos/id/1015/1200/800",
+                      description: "Mountain Lake"
+                    },
+                    {
+                      preview: "https://picsum.photos/id/1016/300/200",
+                      original: "https://picsum.photos/id/1016/1200/800",
+                      description: "Forest"
+                    },
+                    {
+                      preview: "https://picsum.photos/id/1018/300/200",
+                      original: "https://picsum.photos/id/1018/1200/800",
+                      description: "River"
+                    },
+                    {
+                      preview: "https://picsum.photos/id/1020/300/200",
+                      original: "https://picsum.photos/id/1020/1200/800",
+                      description: "Trees"
+                    }
+                  ];
+                  
+                  const gallery = document.querySelector(`.gallery`);
+                  
+                  const galleryMarkup = images
+                    .map(
+                      image => `
+                      &lt;li class="gallery-item"&gt;
+                      &lt;img
+                            src="${image.preview}"
+                            alt="${image.description}"
+                            data-source="${image.original}"
+                          />
+                          &lt;/li&gt;`
                       
-                      // 1. Знаходимо наш список у DOM
-                      const galleryContainer = document.querySelector('.gallery');
-                      
-                      // 2. Функція для створення HTML-розмітки
-                      function createGalleryMarkup(items) {
-                        return items
-                          .map(
-                            ({ preview, original, description }) => 
-                          <li class="gallery-item">
-                            <a class="gallery-link" href="${original}">
-                              <img
-                                class="gallery-image"
-                                src="${preview}"
-                                data-source="${original}"
-                                alt="${description}"
-                              />
-                            </a>
-                          </li>
-                        
-                          )
-                          .join('');
-                      }
-                      
-                      // 3. Генеруємо та додаємо розмітку в DOM
-                      galleryContainer.innerHTML = createGalleryMarkup(images);
-                      
-                      // 4. Додаємо слухач подій (Делегування)
-                      galleryContainer.addEventListener('click', (event) => {
-                        event.preventDefault();
-                      
-                        // Перевіряємо, чи клікнули по картинці
-                        const isImageClicked = event.target.classList.contains('gallery-image');
-                        if (!isImageClicked) return;
-                      
-                        // Отримуємо посилання на велике зображення (data-source)
-                        const largeImageUrl = event.target.dataset.source;
-                        console.log('Посилання на велике зображення:', largeImageUrl);
-                      
-                        // Створюємо та відкриваємо модальне вікно бібліотеки basicLightbox
-                        const instance = basicLightbox.create(
-                          <div class="modal">
-                              <img src="${largeImageUrl}" alt="${event.target.alt}" width="800">
-                          </div>
-                        );
-                      
-                        instance.show();
-                      });
+                    )
+                    .join("");
+                  
+                  gallery.innerHTML = galleryMarkup;
+                  
+                  gallery.addEventListener("click", onGalleryClick);
+                  
+                  function onGalleryClick(event) {
+                    event.preventDefault();
+                  
+                    if (event.target.nodeName !== "IMG") {
+                      return;
+                    }
+                  
+                    const largeImage = event.target.dataset.source;
+                  
+                    const instance = basicLightbox.create(`
+                    &lt;img src="${largeImage}" alt="${event.target.alt}"&gt;`
+                    );
+                  
+                    instance.show();
+                  }
                 </pre>
             </section>
             <section id="task7-result" class="panel">
